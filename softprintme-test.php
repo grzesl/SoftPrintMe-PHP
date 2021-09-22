@@ -26,9 +26,14 @@ try {
     $printer->text("Regular Tux.\n");
     $printer->feed();
 
+    $printer->selectPrintMode();
+    $printer->qrCode("https://softprint.me");
+    $printer->feed();
+    $printer->barcode("1234567890");
+
     $printer->selectPrintMode(); //uninit printout
     $printer->setJustification(Printer::JUSTIFY_LEFT);
-    
+
     $printer->cut();
     
 
